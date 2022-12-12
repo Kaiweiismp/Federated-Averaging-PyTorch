@@ -175,7 +175,7 @@ class Server(object):
         for idx in tqdm(sampled_client_indices, leave=False):
             self.clients[idx].client_update()
             selected_total_size += len(self.clients[idx])
-
+ 
         message = f"[Round: {str(self._round).zfill(4)}] ...{len(sampled_client_indices)} clients are selected and updated (with total sample size: {str(selected_total_size)})!"
         print(message); logging.info(message)
         del message; gc.collect()
